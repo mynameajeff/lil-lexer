@@ -27,6 +27,7 @@ test.add("MUL-OPERAND", "*")
 test.add("FLOAT",   r"(\d+\.(\d+)?|\.\d+)", isRegex = True)
 test.add("INTEGER", r"\d+",                 isRegex = True)
 
+# This will contain all of the given tokens of the file "test.code"
 tokenfinal = []
 
 for token_list in test:
