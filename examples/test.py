@@ -4,7 +4,7 @@ import lexer
 
 test = lexer.Lexer("test.code")
 
-# Adds a token for the Lexer to look for
+# Adds the needed token rules for the Lexer to lex the syntax in "test.code":
 
 test.add("ATSYMBOL", "@")
 test.add("LIBSTR", "library")
