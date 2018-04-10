@@ -54,12 +54,16 @@ class Lexer:
 
         self.iteration_level += 1
 
-        return self.get_tokens([x for x in current_line if x != ''])
+        return self.get_tokens(current_line)
         
 
     def add(self, token_name, value, isRegex = False):
 
-        if isinstance(value, list):
+        if isinstance(value, dict):
+            for key, value in value.items():
+                self.add(token_name.replace("@", key), value, isRegex)
+
+        elif isinstance(value, list):
             for token_rule in value:
                 self.add(token_name, token_rule, isRegex)
 
@@ -77,7 +81,7 @@ class Lexer:
 
             return None
 
-        line = ' '.join(line).replace("\n", "")
+        line = ' '.join(line)
 
         current_token = 0
 

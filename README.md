@@ -1,9 +1,10 @@
 # lil-lexer
-I made this lexer in ~(7-8) hours, but it works alright :v
 
-It has a few neat features:
-  - Regex Support for token rules (rule definitions must have the optional parameter isRegex set to True)
-  - for multiple matches for a single token name, a list can be passed instead and tokens of the same name will be created for all the items in the list, but the state of the isRegex parameter will be applied to all of those resulting tokens.
+This lexer has a few neat features:
+  - Regex Support for token rules (rule definitions must have the optional parameter `isRegex` set to True)
+  - For multiple matches for a single token name, a list can be passed instead and tokens of the same name will be created for all the items in the list, but the state of the `isRegex` parameter will be applied to all of those resulting tokens.
+  - For tokens of a similar name (e.g. `ADD-OPERAND`, `MUL-OPERAND`), you could simply pass a string `@-OPERAND`(the @ is what is replaced, and more than one is allowed), and a dictionary to the .add method of the lexer.Lexer object, which contains the difference(key), and the value of the token.
+  - The dict/list rule features can be nested.
 
 Alongside those, it also has caveats:
   - Whitespace is obliterated due to the lexing process, which may make this lexer unsuitable in some cases.

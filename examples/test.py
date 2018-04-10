@@ -21,8 +21,7 @@ test.add("RPAREN", ")")
 
 test.add("SEMICOLON", ";")
 
-test.add("ADD-OPERAND", "+")
-test.add("MUL-OPERAND", "*")
+test.add("@-OPERAND", {"ADD" : "+", "MUL" : "*"})
 
 test.add("FLOAT",   r"(\d+\.(\d+)?|\.\d+)", isRegex = True)
 test.add("INTEGER", r"\d+",                 isRegex = True)
