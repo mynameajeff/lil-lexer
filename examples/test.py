@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
+from sys import path
+
+path.append('../')
+
 import lexer
+
 
 test = lexer.Lexer("test.code")
 
