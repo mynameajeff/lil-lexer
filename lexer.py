@@ -1,12 +1,10 @@
 ##lexer.py
 
-# try:
-#     import regex
+try:
+    import regex
 
-# except:
-#     import re as regex
-
-import regex
+except:
+    import re as regex
 
 
 class Token:
@@ -81,7 +79,7 @@ class Lexer:
 
             return None
 
-        line = ' '.join(line)
+        line = ' '.join(line).lstrip()
 
         current_token = 0
 
